@@ -1,0 +1,23 @@
+{
+  "name": "cosmic-js-cloudfront-blog-post",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "prettier": "^1.2.2",
+    "react": "^15.5.4",
+    "react-apollo": "^1.1.1",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "styled-components": "^1.4.5"
+  },
+  "devDependencies": {
+    "codogo-react-scripts": "0.9.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
