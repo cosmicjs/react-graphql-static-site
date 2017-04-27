@@ -1,0 +1,10 @@
+query($postSlug: String!){
+	object(bucket_slug: "codogo-blog-demo", slug: $postSlug) {
+		title
+		metadata
+		content
+		modifiedAt: modified_at
+		createdAt: created_at
+		order
+	}
+}

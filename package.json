@@ -1,23 +1,30 @@
 {
-  "name": "cosmic-js-cloudfront-blog-post",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "prettier": "^1.2.2",
-    "react": "^15.5.4",
-    "react-apollo": "^1.1.1",
-    "react-dom": "^15.5.4",
-    "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1",
-    "styled-components": "^1.4.5"
-  },
-  "devDependencies": {
-    "codogo-react-scripts": "0.9.8"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+	"name": "cosmic-js-cloudfront-blog-post",
+	"version": "0.1.0",
+	"private": true,
+	"eslintConfig": {
+		"extends": "codogo"
+	},
+	"dependencies": {
+		"prettier": "^1.2.2",
+		"ramda": "^0.23.0",
+		"react": "^15.5.4",
+		"react-apollo": "^1.1.1",
+		"react-dom": "^15.5.4",
+		"react-router": "^4.1.1",
+		"react-router-dom": "^4.1.1",
+		"styled-components": "^1.4.5",
+		"webpack-dev-server": "2.4.2"
+	},
+	"devDependencies": {
+		"codogo-react-scripts": "0.9.8"
+	},
+	"scripts": {
+		"build": "react-scripts build",
+		"eject": "react-scripts eject",
+		"format": "yarn run prettier && eslint --fix src",
+		"prettier": "prettier --use-tabs --tab-width 4 --trailing-comma all --write \"src/**/*.js\"",
+		"start": "react-scripts start",
+		"test": "react-scripts test --env=jsdom"
+	}
 }

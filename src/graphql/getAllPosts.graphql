@@ -1,0 +1,6 @@
+{
+	objects: objectsByType(bucket_slug: "codogo-blog-demo", type_slug: "posts") {
+		title
+		slug
+	}
+}
