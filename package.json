@@ -23,6 +23,7 @@
 		"build": "react-scripts build",
 		"eject": "react-scripts eject",
 		"format": "yarn run prettier && eslint --fix src",
+		"lint": "eslint --max-warnings 5 src",
 		"prettier": "prettier --use-tabs --tab-width 4 --trailing-comma all --write \"src/**/*.js\"",
 		"start": "react-scripts start",
 		"test": "react-scripts test --env=jsdom"
