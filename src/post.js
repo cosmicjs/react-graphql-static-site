@@ -7,6 +7,8 @@ import { getPostQuery, } from "./graphql";
 
 const PostContainerStyled = styled.div`
 	flex: 7;
+	padding: 8px;
+	align-items: center;
 `;
 
 const PostImage = styled.img`
