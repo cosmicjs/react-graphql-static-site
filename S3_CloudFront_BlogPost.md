@@ -157,6 +157,8 @@ Now we create a new error page to intercept the errors from S3.
 
 Fill out the custom response as above.
 
+You'll need to give your CloudFront distribution around 15 minutes to fully deploy, but then it should be accessible at it's domain name, ours looks like this: [d2hqptkles3gsg.cloudfront.net](d2hqptkles3gsg.cloudfront.net).
+
 ## Conclusion 
 
 And there you have it: A simple client-side rendered static site to display content from CosmicJS that's super fast and super simple.
