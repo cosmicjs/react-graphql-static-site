@@ -1,9 +1,9 @@
 import React from "react";
-import { graphql, } from "react-apollo";
+import { graphql, ApolloProvider, } from "react-apollo";
 import { BrowserRouter as Router, } from "react-router-dom";
 import styled, { ThemeProvider, } from "styled-components";
 
-import ApolloProvider, { getAllPostsQuery, } from "./graphql";
+import client, { getAllPostsQuery, } from "./graphql";
 
 import SideBar from "./sidebar";
 import Post from "./post";
@@ -29,7 +29,7 @@ const Root = graphql(getAllPostsQuery)(props => (
 
 export default () => (
 	<ThemeProvider theme = { theme }>
-		<ApolloProvider>
+		<ApolloProvider client = { client  } >
 			<Router>
 				<Root />
 			</Router>

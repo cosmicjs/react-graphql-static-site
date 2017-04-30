@@ -16,11 +16,7 @@ const client = new ApolloClient({
 
 // ------------------------------
 
-export default props => (
-	<ApolloProvider client = { client }>
-		{props.children}
-	</ApolloProvider>
-);
+export default client;
 
 export { default as getAllPostsQuery, } from "./getAllPosts.graphql";
 export { default as getPostQuery, } from "./getPost.graphql";
