@@ -1,31 +1,29 @@
 # Building a super fast static site using AWS S3 and CloudFront
 
 ## Intro
-+ Why have a static client rendered site? Pros/Cons
-+ How to fix cons:
+So you've read all the great reasons to [go API-first](https://cosmicjs.com/why-cms-api), and you've produced a great looking single page app to display your content. But how do you serve it to the user?
+One possible solution is to host your website statically, using AWS S3 and CloudFront. This means you simply put your website source files online, and they're served immediately to the user, no server processing needed!
 
-(WHO IS THIS FOR)
+There are several big advantages to static hosting with client-side rendering:
++ Blazing Fast (no server preprocessing)
++ Really simply (no server architecture to maintain)
++ Crazy Available (your server can't break if there isn't one)
++ Instant Updates (don't have to wait for the site to rebuild to see your changes)
 
-## Why have a static client rendered site?
+Setting up a static site is easier than you might think, and this tutorial walks you through how to setup a static website that gets its data from CosmicJS and renders on the client in under 10 minutes!
 
-Pros:
-+ Faster updates
-+ No need to redeploy/flush cache for every content update
-+ Perfect for single page apps
-
-Cons:
-+ No clever server-side dynamic routing... until now!
+We'll also cover some tips and tricks on getting the most out of your static site that you might not have known, which will be useful, even if you're not building a purely static site.
 
 ## TL;DR
 + Create a single page app
 + Serve it as an S3 website
-+ Configure CloudFront to serve it
++ Configure CloudFront to distribute it
 
 ## The site we'll be hosting
 
-Our example website is a static single page app, in our case using `webpack` and `react`, with `react-router` handling routing.
+Our example website is a static single page app, in our case using `webpack` and `react`, with `react-router` handling routing, and CosmicJS's [GraphQL](https://cosmicjs.com/docs/graphql) API to fetch data (tutorial coming soon).
 
-If you'd like to follow along at home, you can download our demo code [here]().
+If you'd like to follow along at home, you can download our demo code [here](https://bitbucket.org/codogo/cosmic-js-cloudfront-blog-post).
 
 Our demo site is structured as follows:
 
@@ -44,8 +42,6 @@ Our demo site is structured as follows:
 ```
 
 We've broken our `js` into several different files so that they can be cached independently; if `vendorReactApollo` is the only file that changes, it's the only file that our clients will have to re-get when they revisit our site.
-
-(CLARIFY DATA HASHES)
 
 `index.html` is the only HTML file we need to deploy, and it's minimal:
 
@@ -115,13 +111,13 @@ The _Error Document_ is the file that's served whenever a client navigates to a 
 
 Upload your site to the root of your S3 bucket and your site will be ready to serve.
 
-## Testing the hosting out
+### Testing the hosting out
 
 Navigate to the _Endpoint_ URL shown in the `Static Website Hosting` box, and you should see your web app! You can check out our demo [here](http://codogo-cosmic-js-demo-blog.s3-website-eu-west-1.amazonaws.com/).
 
 Try navigating to other pages and refreshing the page - you should see that your web app loads as if the pages you're navigating to actually exist on the server.
 
-## Next steps
+### Next steps
 
 For a small site with low, unimportant traffic - for example, a company internal website - this hosting would be sufficient. However, there are two main issues with this hosting solution:
 
@@ -132,7 +128,7 @@ Having every page of our site return a `404` code is terrible for SEO as any web
 
 ## CloudFront Config
 
-### Create A CloudFront Distribution
+### 1. Create A CloudFront Distribution
 
 ![Create A Distribution](/img/cf_create_1.png)
 
@@ -140,11 +136,8 @@ We need to create a CloudFront web distribution through which all our web traffi
 
 ![Point CF at our S3 website](/img/cf_create_2.png)
 
-In the `Origin Domain Name` field you'll be given the option to pick your S3 bucket. __Do Not Do This!__ Instead, set the `Origin Domain Name` to be your S3 website URL. For example, for our demo it would be [`codogo-cosmic-js-demo-blog.s3-website-eu-west-1.amazonaws.com`](codogo-cosmic-js-demo-blog.s3-website-eu-west-1.amazonaws.com).
-
-(ADD WHAT IT"S NOT)
-
-### Cache long term files
+In the `Origin Domain Name` field you'll be given the option to pick your S3 bucket. __Do Not Do This!__ Instead, set the `Origin Domain Name` to be your S3 website URL. For example, for our demo it would be [`codogo-cosmic-js-demo-blog.s3-website-eu-west-1.amazonaws.com`](codogo-cosmic-js-demo-blog.s3-website-eu-west-1.amazonaws.com), not `codogo-cosmic-js-demo-blog.s3.amazonaws.com`.
+### 2. Cache long term files
 
 ![Create New Behaviour](/img/cf_edit_1.png)
 
@@ -154,7 +147,7 @@ Now we're going to tell CloudFront how to cache our `static` files. To do this w
 
 We want our `Path Pattern` to match everything in our static folder. The `Object Settings` should be left as they are.
 
-### Correct Response Code
+### 3. Correct Response Code
 
 ![Create Error Response](/img/cf_edit_4.png)
 
@@ -164,6 +157,9 @@ Now we create a new error page to intercept the errors from S3.
 
 Fill out the custom response as above.
 
-## React Snapshot
+## Conclusion 
 
+And there you have it: A simple client-side rendered static site to display content from CosmicJS that's super fast and super simple.
 
+If you're making a static site, or anything else, with CosmicJS get in touch on out [slack](https://cosmicjs.com/community) or [twitter](https://twitter.com/cosmic_js); we'd love to see what you're making.
+This post was written by [Codogo](https://codogo.io/), a fresh new digital agency with a passion for creating amazing digital experiences. Keep an eye out for our next post, on best practice for making a CosmicJS site using react.js and GraphQL.
