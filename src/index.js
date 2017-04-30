@@ -21,9 +21,11 @@ injectGlobal`
 		margin: 0;
 		min-height: 100%;
 		font-family: 'Work Sans', sans-serif;
+		background-color: #fff;
 	}
 
 	#root {
+		display: block;
 		align-self: stretch;
 		flex: 1;
 		min-height: 100%;
