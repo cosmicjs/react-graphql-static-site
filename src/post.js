@@ -40,9 +40,13 @@ const Post = graphql(getPostQuery)(props => (
 	<PostContainerStyled>
 		<PostInner>
 			<PostImage
-				src = { R.path(["data", "object", "metadata", "hero", "imgix_url",])(
-					props,
-				) }
+				src = { R.path([
+					"data",
+					"object",
+					"metadata",
+					"hero",
+					"imgix_url",
+				])(props) }
 			/>
 
 			<PostTitle>
