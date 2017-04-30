@@ -1,6 +1,5 @@
 import {
 	ApolloClient,
-	ApolloProvider,
 	createNetworkInterface,
 } from "react-apollo";
 
