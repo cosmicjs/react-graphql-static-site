@@ -4,6 +4,8 @@ import {
 	createNetworkInterface,
 } from "react-apollo";
 
+// ------------------------------
+
 const networkInterface = createNetworkInterface({
 	uri: "https://graphql.cosmicjs.com/v1",
 });
@@ -11,6 +13,8 @@ const networkInterface = createNetworkInterface({
 const client = new ApolloClient({
 	networkInterface: networkInterface,
 });
+
+// ------------------------------
 
 export default props => (
 	<ApolloProvider client = { client }>
