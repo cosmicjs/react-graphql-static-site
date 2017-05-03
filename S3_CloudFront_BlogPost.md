@@ -2,7 +2,8 @@
 
 ## Intro
 So you've read all the great reasons to [go API-first](https://cosmicjs.com/why-cms-api), and you've produced a great looking single page app to display your content. But how do you serve it to the user?
-One possible solution is to host your website statically, using AWS S3 and CloudFront. This means you simply put your website source files online, and they're served immediately to the user, no server processing needed!
+
+You COULD  set up a full Node server to host, route and serve your site. Or you could just host your website statically using AWS S3 and CloudFront! This means you simply put your website source files online, and they're served immediately to the user, no server processing needed.
 
 There are several big advantages to static hosting with client-side rendering:
 + Blazing Fast (no server preprocessing)
@@ -10,13 +11,13 @@ There are several big advantages to static hosting with client-side rendering:
 + Crazy Available (your server can't break if there isn't one)
 + Instant Updates (don't have to wait for the site to rebuild to see your changes)
 
-Setting up a static site is easier than you might think, and this tutorial walks you through how to setup a static website that gets its data from CosmicJS and renders on the client in under 10 minutes!
+Setting up a static site is easier than you might think, and this tutorial walks you through how to set up a static website that gets its data from CosmicJS and renders on the client in under 10 minutes!
 
 We'll also cover some tips and tricks on getting the most out of your static site that you might not have known, which will be useful, even if you're not building a purely static site.
 
 ## TL;DR
 + Create a single page app
-+ Serve it as an S3 website
++ Serve it as a static S3 website
 + Configure CloudFront to distribute it
 
 ## The site we'll be hosting
