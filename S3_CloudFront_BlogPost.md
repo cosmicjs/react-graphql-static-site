@@ -23,7 +23,7 @@ We'll also cover some tips and tricks on getting the most out of your static sit
 
 Our example website is a static single page app, in our case using `webpack` and `react`, with `react-router` handling routing, and CosmicJS's [GraphQL](https://cosmicjs.com/docs/graphql) API to fetch data (tutorial coming soon).
 
-If you'd like to follow along at home, you can download our demo code [here](https://bitbucket.org/codogo/cosmic-js-cloudfront-blog-post).
+If you'd like to follow along at home, you can download our demo code [here](https://bitbucket.org/codogo/cosmic-js-cloudfront-blog-post/src).
 
 Our demo site is structured as follows:
 
