@@ -9,6 +9,14 @@ const networkInterface = createNetworkInterface({
 	uri: "https://graphql.cosmicjs.com/v1",
 });
 
+networkInterface.use([{
+	applyMiddleware(req, next) {
+		console.log({req,});
+
+		next();
+	}
+}]);
+
 const client = new ApolloClient({
 	networkInterface: networkInterface,
 });

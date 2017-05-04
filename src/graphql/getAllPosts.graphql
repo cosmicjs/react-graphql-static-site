@@ -1,5 +1,5 @@
-{
-	objects: objectsByType(bucket_slug: "codogo-blog-demo", type_slug: "posts") {
+query($bucketSlug: String! $readKey: String!){
+	objects: objectsByType(bucket_slug: $bucketSlug, read_key: $readKey, type_slug: "posts") {
 		title
 		slug
 	}

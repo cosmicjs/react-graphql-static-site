@@ -8,6 +8,7 @@ import client, { getAllPostsQuery, } from "./graphql";
 import SideBar from "./sidebar";
 import Post from "./post";
 import theme from "./theme";
+import config from "../config";
 
 // ------------------------------
 
@@ -24,6 +25,11 @@ const Root = graphql(getAllPostsQuery)(props => (
 		<Post />
 	</RootStyled>
 ));
+
+Root.defaultProps = {
+	bucketSlug: config.bucket.slug,
+	readKey: config.bucket["read_key"]
+};
 
 // ------------------------------
 

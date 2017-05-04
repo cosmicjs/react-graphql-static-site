@@ -1,5 +1,5 @@
-query($postSlug: String!){
-	object(bucket_slug: "codogo-blog-demo", slug: $postSlug) {
+query($bucketSlug: String! $readKey: String! $postSlug: String!){
+	object(bucket_slug: $bucketSlug, read_key: $readKey, slug: $postSlug) {
 		title
 		metadata
 		content

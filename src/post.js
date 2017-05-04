@@ -4,6 +4,7 @@ import { Route, Switch, } from "react-router";
 import styled from "styled-components";
 
 import { getPostQuery, } from "./graphql";
+import config from "../config";
 
 // ------------------------------
 
@@ -61,6 +62,11 @@ const Post = graphql(getPostQuery)(props => (
 		</PostInner>
 	</PostContainerStyled>
 ));
+
+Post.defaultProps = {
+	bucketSlug: config.bucket.slug,
+	readKey: config.bucket["read_key"]
+};
 
 const PostWrapper = props => (
 	<Post postSlug = { R.path(["match", "params", "postSlug",])(props) } />
