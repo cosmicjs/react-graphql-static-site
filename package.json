@@ -17,7 +17,7 @@
 		"webpack-dev-server": "2.4.2"
 	},
 	"devDependencies": {
-		"codogo-react-scripts": "0.9.8",
+		"codogo-react-scripts": "^0.9.10",
 		"eslint": "^3.19.0"
 	},
 	"scripts": {
