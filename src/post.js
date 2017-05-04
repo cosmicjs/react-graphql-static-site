@@ -65,7 +65,7 @@ const Post = graphql(getPostQuery)(props => (
 
 Post.defaultProps = {
 	bucketSlug: config.bucket.slug,
-	readKey: config.bucket["read_key"]
+	readKey: config.bucket["read_key"],
 };
 
 const PostWrapper = props => (

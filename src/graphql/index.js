@@ -1,7 +1,4 @@
-import {
-	ApolloClient,
-	createNetworkInterface,
-} from "react-apollo";
+import { ApolloClient, createNetworkInterface, } from "react-apollo";
 
 // ------------------------------
 
@@ -9,13 +6,15 @@ const networkInterface = createNetworkInterface({
 	uri: "https://graphql.cosmicjs.com/v1",
 });
 
-networkInterface.use([{
-	applyMiddleware(req, next) {
-		console.log({req,});
+networkInterface.use([
+	{
+		applyMiddleware(req, next) {
+			console.log({ req, });
 
-		next();
-	}
-}]);
+			next();
+		},
+	},
+]);
 
 const client = new ApolloClient({
 	networkInterface: networkInterface,

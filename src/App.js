@@ -28,14 +28,14 @@ const Root = graphql(getAllPostsQuery)(props => (
 
 Root.defaultProps = {
 	bucketSlug: config.bucket.slug,
-	readKey: config.bucket["read_key"]
+	readKey: config.bucket["read_key"],
 };
 
 // ------------------------------
 
 export default () => (
 	<ThemeProvider theme = { theme }>
-		<ApolloProvider client = { client  } >
+		<ApolloProvider client = { client }>
 			<Router>
 				<Root />
 			</Router>
