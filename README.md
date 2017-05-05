@@ -3,7 +3,8 @@ This is an example of a simple blog app built using [create-react-app](https://g
 
 ## Getting Started
 1. Go to [Cosmic JS](https://cosmicjs.com/) and create a new Bucket.
-2. Download the app:
+2. Import the `bucket.json` in this repo to your Bucket located in Your Bucket > Import / Export
+3. Download the app:
 ```
 git clone https://github.com/tonyspiro/react-graphql-static-site
 cd react-graphql-static-site
