@@ -1,5 +1,3 @@
-console.log(process.env);
-
 export default {
 	bucket: {
 		slug: process.env.COSMIC_BUCKET || "codogo-blog-demo",
