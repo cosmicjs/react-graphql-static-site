@@ -12,7 +12,7 @@ yarn
 ```
 ## Starting the app
 ### Run in development
-Connect to your Cosmic JS Bucket with the ENV Variable `COSMIC_BUCKET` or edit the `config.js` file
+Connect to your Cosmic JS Bucket using the environment variable `COSMIC_BUCKET` or edit the `config.js` file.
 ```
 COSMIC_BUCKET=your-bucket-slug yarn start
 ```
