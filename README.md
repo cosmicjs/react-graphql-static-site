@@ -1,6 +1,5 @@
 # React GraphQL Static Site
-## Building a super fast static site using AWS S3 and CloudFront
-The app is build using create-react-app and is powered using GraphQL connected to the Cosmic JS API.
+This is an example of a simple blog add build using [create-react-app'(https://github.com/facebookincubator/create-react-app). It's powered using [GraphQL](http://graphql.org/) connected to the [Cosmic JS API](https://cosmicjs.com/) for easy content management.
 
 ## Getting Started
 ```
