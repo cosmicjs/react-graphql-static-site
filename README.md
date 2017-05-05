@@ -7,11 +7,11 @@ git clone https://github.com/tonyspiro/react-graphql-static-site
 cd react-graphql-static-site
 yarn
 ```
-## Run in development
+### Run in development
 ```
 yarn start
 ```
-## Build for production
+### Build for production
 ```
 yarn build
 ```
