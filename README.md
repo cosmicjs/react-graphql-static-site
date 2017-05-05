@@ -1,5 +1,5 @@
 # React GraphQL Static Site
-This is an example of a simple blog add build using [create-react-app](https://github.com/facebookincubator/create-react-app). It's powered using [GraphQL](http://graphql.org/) connected to the [Cosmic JS API](https://cosmicjs.com/) for easy content management.
+This is an example of a simple blog add build using [create-react-app](https://github.com/facebookincubator/create-react-app). It's powered by [GraphQL](http://graphql.org/) connected to the [Cosmic JS API](https://cosmicjs.com/) for easy content management.
 
 ## Getting Started
 ```
