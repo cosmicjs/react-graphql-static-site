@@ -1,14 +1,18 @@
-# Codogo Cosmic JS Blog Example App
+# React GraphQL Static Site
 ## Building a super fast static site using AWS S3 and CloudFront
+The app is build using create-react-app and is powered using GraphQL connected to the Cosmic JS API.
 
-The example app to accompany a blog post.
-
-Run using:
-`yarn run start`
-or
-`npm run start`
-
-Build using
-`yarn run build`
-or
-`npm run build`
+## Getting Started
+```
+git clone https://github.com/tonyspiro/react-graphql-static-site
+cd react-graphql-static-site
+yarn
+```
+## Run in development
+```
+yarn start
+```
+## Build for production
+```
+yarn build
+```
