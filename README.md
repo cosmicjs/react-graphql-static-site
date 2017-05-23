@@ -7,7 +7,7 @@ This is an example of a simple blog app built using [create-react-app](https://g
 2. Import the `bucket.json` in this repo to your Bucket located in Your Bucket > Import / Export
 3. Download the app:
 ```
-git clone https://github.com/tonyspiro/react-graphql-static-site
+git clone https://github.com/cosmicjs/react-graphql-static-site
 cd react-graphql-static-site
 yarn
 ```
